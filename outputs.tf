@@ -18,16 +18,6 @@ output "firewall_subnets" {
   value       = aws_subnet.firewall.*.id
 }
 
-output "main_security_group_id" {
-  description = "The ID of the main security group"
-  value       = aws_security_group.main.id
-}
-
-output "additional_security_group_ids" {
-  description = "The IDs of the additional security groups"
-  value       = aws_security_group.additional.*.id
-}
-
 output "internet_gateway_id" {
   description = "The ID of the Internet Gateway"
   value       = aws_internet_gateway.gw.id
@@ -51,9 +41,4 @@ output "private_route_table_ids" {
 output "firewall_route_table_ids" {
   description = "The IDs of the firewall route tables"
   value       = aws_route_table.firewall.*.id
-}
-
-output "vpc_endpoints" {
-  description = "The IDs of the VPC endpoints"
-  value       = aws_vpc_endpoint.vpc_endpoints.*.id
 }
