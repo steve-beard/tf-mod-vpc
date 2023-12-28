@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "gw" {
 
 // Create an Elastic IP for each NAT Gateway
 resource "aws_eip" "nat" {
-  count = length(var.azs)
+  count = var.create_nat_gateway ? length(var.azs) : 0
 
   domain = "vpc"
 
@@ -51,7 +51,7 @@ resource "aws_eip" "nat" {
 
 // Create a NAT Gateway in each public subnet
 resource "aws_nat_gateway" "nat" {
-  count = length(var.azs)
+  count = var.create_nat_gateway ? length(var.azs) : 0
 
   allocation_id = aws_eip.nat[count.index].id
   subnet_id     = tolist(aws_subnet.public.*.id)[count.index]

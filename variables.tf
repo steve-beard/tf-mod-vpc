@@ -7,6 +7,12 @@ variable "base_cidr" {
   }
 }
 
+variable "create_nat_gateway" {
+  description = "Whether to create a NAT Gateway"
+  type        = bool
+  default     = true
+}
+
 variable "azs" {
   description = "The availability zones to use"
   type        = list(string)
