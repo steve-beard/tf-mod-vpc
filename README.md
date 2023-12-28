@@ -38,6 +38,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_azs"></a> [azs](#input\_azs) | The availability zones to use | `list(string)` | n/a | yes |
 | <a name="input_base_cidr"></a> [base\_cidr](#input\_base\_cidr) | The base CIDR block for the VPC | `string` | n/a | yes |
+| <a name="input_create_nat_gateway"></a> [create\_nat\_gateway](#input\_create\_nat\_gateway) | Whether to create a NAT Gateway | `bool` | `true` | no |
 | <a name="input_firewall"></a> [firewall](#input\_firewall) | Whether to create the firewall subnet | `bool` | `false` | no |
 | <a name="input_region"></a> [region](#input\_region) | The region to deploy to | `string` | `"us-east-1"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
